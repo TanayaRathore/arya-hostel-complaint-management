@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arya Hostel Complaint Corner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <header class="header">
+            <img src="arya-logo.png" alt="Logo" class="logo">
+            <h1 class="heading">Arya Hostel Complaint Corner</h1>
+        </header>
+        <div class="image-gallery">
+            <img src="img1.jpg" class="image" alt="Image 1">
+            <img src="img2.jpg" class="image" alt="Image 2">
+            <img src="img3.jpg" class="image" alt="Image 3">
+            <img src="img4.jpg" class="image" alt="Image 4">
+        </div>
+        <div class="complaint">
+            <form id="complaintForm">
+                <p>Name:</p>
+                <input type="text" id="name" name="name">
+
+                <p>Roll no:</p>
+                <input type="text" id="rollNo" name="rollNo">
+
+                <p>Contact:</p>
+                <input type="text" id="contact" name="contact">
+
+                <p>Branch:</p>
+                <input type="text" id="branch" name="branch">
+
+                <p>Year:</p>
+                <input type="text" id="year" name="year">
+
+                <p>Hostel:</p>
+                <select id="hostel" name="hostel">
+                    <option value="" disabled selected>Select</option>
+                    <option value="girls_hostel_1">Girls Hostel 1</option>
+                    <option value="girls_hostel_2">Girls Hostel 2</option>
+                    <option value="tej_hostel">Tej Hostel</option>
+                    <option value="nbh">NBH</option>
+                    <option value="h_hostel">H Hostel</option>
+                </select>
+
+                <p>Room no:</p>
+                <input type="text" id="roomNo" name="roomNo">
+
+                <p>Request related to:</p>
+                <select id="requestType" name="requestType">
+                    <option value="" disabled selected>Select</option>
+                    <option value="plumber">Plumber</option>
+                    <option value="electrician">Electrician</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="carpenter">Carpenter</option>
+                    <option value="duct">Duct</option>
+                    <option value="food">Food</option>
+                    <option value="security">Security</option>
+                    <option value="wifi">Wifi</option>
+                    <option value="warden">Warden</option>
+                </select>
+
+                <p>Complaint:</p>
+                <textarea id="complaintText" name="complaintText" rows="6" cols="50"></textarea><br />
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="list">
+            <select id="requestList" style="width: 100%;">
+                <option>Request for repair</option>
+                <option>Check request status</option>
+            </select>
+        </div>
+        <footer class="footer">
+            <p>2024 Arya College of Engineering, Kukas, Jaipur</p>
+        </footer>
+    </div>
+</body>
+</html>

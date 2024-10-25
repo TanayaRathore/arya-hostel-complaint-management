@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arya Hostel Complaint Corner</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            margin: 20px;
+            border: 1px solid grey;
+            background-color: rgb(221, 220, 220);
+        }
+        .logo {
+            height: 100px;
+            margin-right: 30%;
+        }
+        .heading {
+            text-transform: uppercase;
+            font-size: 24px;
+            margin: 0;
+            color: #800000;
+        }
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+        }
+        .image {
+            width: 22%;
+            height: auto;
+            margin: 0 6px;
+        }
+        .image:hover {
+            transform: scale(1.3);
+            z-index: 2;
+        }
+        .content {
+            border-style: inset;
+            width: 98%;
+            height: auto;
+            margin: 20px 20px 20px 20px;
+            background-color: #DAD4B5;
+        }
+        .content p {
+            text-align: center;
+            font-style: oblique;
+        }
+        .content button {
+            text-align: center;
+        }
+        .footer {
+            border-style: inset;
+            background-color: #F2E8C6;
+            width: 98%;
+            height: 80px;
+            margin-left: 20px;
+            margin-top: auto;
+        }
+        .footer p {
+            text-align: center;
+            padding: 30px;
+        }
+        .form-container {
+            border: 1px solid black;
+            align-items: center;
+            width: 50%;
+            height: auto;
+            padding: 20px;
+            margin: 30px auto;
+            background-color: #DAD4B5;
+        }
+        .form-container h1 {
+            text-align: center;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .form-container input,
+        .form-container select {
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .form-container button {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .complaint {
+            margin: 20px;
+        }
+        .complaint textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <img src="project arya\arya-logo.png" alt="Logo" class="logo">
+        <h1 class="heading">Arya Hostel Complaint Corner</h1>
+    </header>
+
+    <!-- Image Gallery Section -->
+    <div class="image-gallery">
+        <img src="project arya\img1.jpg" alt="Image 1" class="image">
+        <img src="project arya\img2.jpg" alt="Image 2" class="image">
+        <img src="project arya\img3.jpg" alt="Image 3" class="image">
+        <img src="project arya\img4.jpg" alt="Image 4" class="image">
+    </div>
+
+    <!-- Content Section for Index Page -->
+    <div id="index-page" class="content">
+        <p>
+            <strong>
+                At Arya College, we value your feedback and strive to create a better environment for all our students
+                and staff.<br>
+                If you have any concerns or complaints, please click to login below.<br>
+                Your feedback helps us address issues promptly and improve our services.
+            </strong>
+        </p>
+        <center><button onclick="showPage('login-page')" style="font-weight: bold; color: #CC3300;">Login</button></center>
+    </div>
+
+    <!-- Login Form Section -->
+    <div id="login-page" class="form-container" style="display: none;">
+        <h1>Login</h1>
+        <form action="/action_page.php" method="post">
+            <label for="email">Enter your E-mail:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Enter your password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit" onclick="showPage('complain-page')">Login</button>
+            <h2>If you are a new user:</h2>
+            <button type="button" onclick="showPage('signup-page')">Signup</button>
+        </form>
+    </div>
+
+    <!-- Signup Form Section -->
+    <div id="signup-page" class="form-container" style="display: none;">
+        <h1>Signup</h1>
+        <form action="/signup_action" method="post">
+            <label for="firstName">First name:</label>
+            <input type="text" id="firstName" name="firstName" required><br>
+
+            <label for="lastName">Last name:</label>
+            <input type="text" id="lastName" name="lastName" required><br>
+
+            <label for="email">Enter E-mail:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">Select</option>
+                <option value="india">India</option>
+                <option value="us">US</option>
+                <option value="germany">Germany</option>
+            </select><br>
+
+            <label for="city">City:</label>
+            <select id="city" name="city" required>
+                <option value="">Select</option>
+                <option value="jaipur">Jaipur</option>
+                <option value="jodhpur">Jodhpur</option>
+                <option value="delhi">Delhi</option>
+                <option value="udaipur">Udaipur</option>
+            </select><br>
+
+            <label for="gender">Gender:</label>
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <label><input type="radio" name="gender" value="female" required> Female</label><br>
+
+            <center><button type="submit">Signup</button></center>
+        </form>
+    </div>
+
+    <!-- Complaint Form Section -->
+    <div id="complain-page" class="form-container" style="display: none;">
+        <h1>Complaint Form</h1>
+        <form id="complaintForm">
+            <p>Name:</p>
+            <input type="text" id="name" name="name">
+
+            <p>Roll no:</p>
+            <input type="text" id="rollNo" name="rollNo">
+
+            <p>Contact:</p>
+            <input type="text" id="contact" name="contact">
+
+            <p>Branch:</p>
+            <input type="text" id="branch" name="branch">
+
+            <p>Year:</p>
+            <input type="text" id="year" name="year">
+
+            <p>Hostel:</p>
+            <select id="hostel" name="hostel">
+                <option value="" disabled selected>Select</option>
+                <option value="girls_hostel_1">Girls Hostel 1</option>
+                <option value="girls_hostel_2">Girls Hostel 2</option>
+                <option value="tej_hostel">Tej Hostel</option>
+                <option value="nbh">NBH</option>
+                <option value="h_hostel">H Hostel</option>
+            </select>
+
+            <p>Room no:</p>
+            <input type="text" id="roomNo" name="roomNo">
+
+            <p>Request related to:</p>
+            <select id="requestType" name="requestType">
+                <option value="" disabled selected>Select</option>
+                <option value="plumber">Plumber</option>
+                <option value="electrician">Electrician</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="carpenter">Carpenter</option>
+                <option value="duct">Duct</option>
+                <option value="food">Food</option>
+                <option value="security">Security</option>
+                <option value="wifi">Wifi</option>
+                <option value="other">Other</option>
+            </select>
+
+            <p>Write your complaint:</p>
+            <textarea id="complaintText" name="complaintText" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>Arya College of Engineering </p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            document.getElementById('index-page').style.display = 'none';
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('signup-page').style.display = 'none';
+            document.getElementById('complain-page').style.display = 'none';
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
